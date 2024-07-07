@@ -38,21 +38,20 @@ The script continues to read messages from the queue until the queue is empty, a
 
 ## Configuration:
 
-sqs_queue_url: The URL of the SQS queue to read from.
+**sqs_queue_url**: The URL of the SQS queue to read from.
 
-postgres_conn: The connection details for the PostgreSQL database.
+**postgres_conn**: The connection details for the PostgreSQL database.
 
-masked_fields: A list of fields to mask in the PII data.
+**masked_fields**: A list of fields to mask in the PII data.
 
 
 ## Security:
 
-The PII data is masked using a SHA-256 hash, making it irreversible and secure.
-
+The PII data is masked using a SHA-256 hash, making it irreversible and secure. <br>
 The PostgreSQL database is used to store the masked data, ensuring data integrity and security.
 
 
-##Scalability:
+## Scalability:
 
 The application is designed to handle a growing dataset by using a message queueing system (SQS) and a scalable database (PostgreSQL).
 
