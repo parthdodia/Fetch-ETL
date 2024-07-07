@@ -12,17 +12,17 @@ This project aims to develop a scalable and secure solution to read messages fro
 
 ## Setup and Installation:
 
-- Clone the repository: git clone https://github.com/parthdodia/Fetch-ETL.git <br>
-- Install the dependencies: 'pip install -r requirements.txt' <br>
+- Clone the repository: `git clone https://github.com/parthdodia/Fetch-ETL.git` <br>
+- Install the dependencies: `pip install -r requirements.txt` <br>
 - Create a PostgreSQL database and update the postgres_conn variable in script.py with the correct credentials. <br>
 - Create an SQS queue and update the sqs_queue_url variable in script.py with the correct URL. <br>
-- Run the application using Docker Compose: 'docker-compose up' <br>
+- Run the application using Docker Compose: `docker-compose up` <br>
 
 
 ## How it Works:
 
 - The script.py script reads messages from the SQS queue using the boto3 library.<br>
-- Each message is parsed as JSON and the PII data (device_id and ip) is masked using the hashlib library.<br>
+- Each message is parsed as JSON and the PII attributes `device_id and ip` are masked using the hashlib library.<br>
 - The masked data is then written to the PostgreSQL database using the psycopg2 library.<br>
 - The script continues to read messages from the queue until the queue is empty, at which point it sleeps for a short period before checking the queue again. <br>
 
