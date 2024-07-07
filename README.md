@@ -12,11 +12,11 @@ This project aims to develop a scalable and secure solution to read messages fro
 
 ## Setup and Installation:
 
-Clone the repository: git clone https://github.com/your-username/pii-data-masking.git<br>
-Install the dependencies: pip install -r requirements.txt<br>
-Create a PostgreSQL database and update the postgres_conn variable in script.py with the correct credentials.<br>
-Create an SQS queue and update the sqs_queue_url variable in script.py with the correct URL.<br>
-Run the application using Docker Compose: docker-compose up<br>
+Clone the repository: git clone https://github.com/parthdodia/Fetch-ETL.git <br>
+Install the dependencies: 'pip install -r requirements.txt' <br>
+Create a PostgreSQL database and update the postgres_conn variable in script.py with the correct credentials. <br>
+Create an SQS queue and update the sqs_queue_url variable in script.py with the correct URL. <br>
+Run the application using Docker Compose: 'docker-compose up' <br>
 
 
 ## How it Works:
