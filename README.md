@@ -4,18 +4,22 @@ This project aims to develop a scalable and secure solution to read messages fro
 
 ## Project Structure:
 
-script.py: The main application script that reads messages from the SQS queue, masks PII data, and writes to the PostgreSQL database.
+**script.py**: The main application script that reads messages from the SQS queue, masks PII data, and writes to the PostgreSQL database.
 
-requirements.txt: Lists the dependencies required to run the application.
+**requirements.txt**: Lists the dependencies required to run the application.
 
-docker-compose.yml: Used to run the application and PostgreSQL database using Docker Compose.
+**docker-compose.yml**: Used to run the application and PostgreSQL database using Docker Compose.
 
 ## Setup and Installation:
 
 Clone the repository: git clone https://github.com/your-username/pii-data-masking.git
+
 Install the dependencies: pip install -r requirements.txt
+
 Create a PostgreSQL database and update the postgres_conn variable in script.py with the correct credentials.
+
 Create an SQS queue and update the sqs_queue_url variable in script.py with the correct URL.
+
 Run the application using Docker Compose: docker-compose up
 
 ## How it Works:
