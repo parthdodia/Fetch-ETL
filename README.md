@@ -5,7 +5,9 @@ This project aims to develop a scalable and secure solution to read messages fro
 ## Project Structure:
 
 script.py: The main application script that reads messages from the SQS queue, masks PII data, and writes to the PostgreSQL database.
+
 requirements.txt: Lists the dependencies required to run the application.
+
 docker-compose.yml: Used to run the application and PostgreSQL database using Docker Compose.
 
 ## Setup and Installation:
