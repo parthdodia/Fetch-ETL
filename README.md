@@ -5,15 +5,23 @@ This project aims to develop a scalable and secure solution to read messages fro
 
 ## Project Structure:
 
-- **script.py**: The main application script that reads messages from the SQS queue, masks PII data, and writes to the PostgreSQL database.<br>
+- **main.py**: The main application script that reads messages from the SQS queue, masks PII data, and writes to the PostgreSQL database.<br>
 - **requirements.txt**: Lists the dependencies required to run the application.<br>
 - **docker-compose.yml**: Used to run the application and PostgreSQL database using Docker Compose.<br>
+- **exe.py**: Used to install the dependencies and build docker containers for the application
 
 
-## Setup and Installation:
+## Prerequisites, Setup and Installation:
 
+- Prerequisites on your computer:
+  - python
+  - awscli : `pip install awscli-local`.
+  - docker : `https://docs.docker.com/get-docker/`
+  - docker-compose
+  - psql : `https://www.postgresql.org/download/`
 - Clone the repository: `git clone https://github.com/parthdodia/Fetch-ETL.git` <br>
-- Install the dependencies: `pip install -r requirements.txt` <br>
+- Open your terminal and go the directory of this project. Simply run the file in python - `python exe.py`. <br>
+- Open a new terminal window with same directory and run the main file `python main.py` <br>
 - Create a PostgreSQL database and update the postgres_conn variable in script.py with the correct credentials. <br>
 - Create an SQS queue and update the sqs_queue_url variable in script.py with the correct URL. <br>
 - Run the application using Docker Compose: `docker-compose up` <br>
