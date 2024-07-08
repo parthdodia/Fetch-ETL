@@ -24,7 +24,7 @@ This project aims to develop a scalable and secure solution to read messages fro
   - [PSQL](https://www.postgresql.org/download/)
 - Clone the repository:
 ```bash
-git clone https://github.com/parthdodia/Fetch-ETL.git`
+git clone https://github.com/parthdodia/Fetch-ETL.git
 ```
 - Open your terminal and go the directory of this project. Simply run this file.
 ```bash
