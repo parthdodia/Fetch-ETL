@@ -26,7 +26,7 @@ This project aims to develop a scalable and secure solution to read messages fro
 ```bash
 git clone https://github.com/parthdodia/Fetch-ETL.git
 ```
-- Open your terminal and go the directory of this project. Simply run this file.
+- Open your terminal and go in the directory of this project. Simply run this file.
 ```bash
 python exe.py
 ```
@@ -52,10 +52,7 @@ select * from user_logins;
 ## How it Works:
 
 - The exe.py script installs the required dependencies. It also runs the .yml file that extracts the custom docker image and creates a container for them.
-- The main.py script reads the messages from SQS queue, masks the required attributes, and stores the masked data in a PostgreSQL database.
-
-## Summary
-To begin with, I was not able to execute the code because of a silly reason. Some of my ports were configured to other services/devices that I didn't know of. After intesive troubleshooting, I figured it it out. Finally I was able to run the code. 
+- The main.py script calls other classes that read the messages from SQS queue, mask the required attributes, and store the masked data in a PostgreSQL database.
 
 
 ## Contributing:
