@@ -14,17 +14,39 @@ This project aims to develop a scalable and secure solution to read messages fro
 ## Prerequisites, Setup and Installation:
 
 - Prerequisites on your computer:
-  - python
-  - awscli : `pip install awscli-local`.
-  - docker : `https://docs.docker.com/get-docker/`
+  - python 3.9 or higher
+  - awscli :
+  ```bash
+   pip install awscli-local
+  ```
+  - [Docker](https://docs.docker.com/get-docker/)
   - docker-compose
-  - psql : `https://www.postgresql.org/download/`
-- Clone the repository: `git clone https://github.com/parthdodia/Fetch-ETL.git` <br>
-- Open your terminal and go the directory of this project. Simply run the file in python - `python exe.py`. <br>
-- Open a new terminal window with same directory and run the main file `python main.py` <br>
-- Create a PostgreSQL database and update the postgres_conn variable in script.py with the correct credentials. <br>
-- Create an SQS queue and update the sqs_queue_url variable in script.py with the correct URL. <br>
-- Run the application using Docker Compose: `docker-compose up` <br>
+  - [PSQL](https://www.postgresql.org/download/)
+- Clone the repository:
+```bash
+git clone https://github.com/parthdodia/Fetch-ETL.git`
+```
+- Open your terminal and go the directory of this project. Simply run this file.
+```bash
+python exe.py
+```
+- Run the following command to verify connection with SQS:
+```bash
+awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/login-queue
+```
+- Open a new terminal window with same directory and run the main file.
+```bash
+python main.py
+```
+- Connect to the database
+```bash
+psql -d postgres -U postgres -p 5432 -h localhost -W
+```
+- Enter the password : `password`. You will see something like this : `postgres=# `. Write your query here
+```bash
+select * from user_logins;
+```
+- You will see the data extracted from SQS queue and loaded into the database.
 
 
 ## How it Works:
