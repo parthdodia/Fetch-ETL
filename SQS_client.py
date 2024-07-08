@@ -3,7 +3,7 @@ import boto3
 from botocore import UNSIGNED
 from botocore.client import Config
 
-class SQSHandler:
+class SQS_client:
     def __init__(self, debug=False):
         # Set the AWS region and queue URL (in this case, a local SQS queue)
         self.AWS_REGION = 'us-east-1'
