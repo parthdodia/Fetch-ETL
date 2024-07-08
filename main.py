@@ -1,9 +1,9 @@
 from PSQL_client import PSQL_client
-from SQSHandler import SQSHandler
+from SQS_client import SQS_client
 from Mask import Mask
 
 # Create a connections to the SQS queue and PostgreSQL database
-queue = SQSHandler()
+queue = SQS_client()
 queue.connect()
 
 db = PSQL_client()
