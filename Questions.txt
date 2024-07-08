@@ -1,49 +1,39 @@
-### 1. How will you read messages from the queue?
-
+1. How will you read messages from the queue?
 - Use the awslocal command to read messages from the SQS queue.
 - Use the boto3 library to interact with the SQS queue programmatically.
 
-### 2. What type of data structures should be used?
- 
+2. What type of data structures should be used? 
 - Use Python dictionaries to store and manipulate the JSON data.
 - Use a data structure like pandas DataFrame to handle and transform the data.
 
-### 3. How will you mask the PII data so that duplicate values can be identified?
- 
+3. How will you mask the PII data so that duplicate values can be identified? 
 - Use a hashing algorithm like SHA-256 to create a unique, irreversible hash for each PII value.
 - Use a encryption algorithm like AES to encrypt the PII values, with a key stored securely.
 
-### 4. What will be your strategy for connecting and writing to Postgres?
- 
+4. What will be your strategy for connecting and writing to Postgres? 
 - Use the psycopg2 library to connect to Postgres and execute SQL queries.
 
-### 5. Where and how will your application run?
- 
+5. Where and how will your application run? 
 - Run the application on a local machine using Docker Compose.
 - Run the application on a cloud platform like AWS, using a container service like ECS or Fargate.
 
-### 6. How would you deploy this application in production?
- 
+6. How would you deploy this application in production? 
 - Use a CI/CD pipeline tool like Jenkins or CircleCI to automate deployment.
 - Use a cloud platform's built-in deployment features, like AWS CodeDeploy or Google Cloud Deploy.
 
-### 7. What other components would you want to add to make this production ready?
- 
+7. What other components would you want to add to make this production ready? 
 - Implement error handling and retry mechanisms for message processing.
 - Add security features like authentication and authorization for access to the application.
 
-### 8. How can this application scale with a growing dataset?
- 
+8. How can this application scale with a growing dataset? 
 - Implement horizontal scaling by adding more instances of the application.
 - Use a cloud platform's auto-scaling features to dynamically adjust instance count.
 
-### 9. How can PII be recovered later on?
- 
+9. How can PII be recovered later on? 
 - Store the original PII values in a secure, encrypted storage like AWS S3 or Google Cloud Storage.
 - Implement a secure, audited process for recovering PII values, with access controls and logging.
 
-### 10. What are the assumptions you made?
- 
+10. What are the assumptions you made? 
 - Assumed that the SQS queue will always be available, and messages will not be lost.
 - Assumed that the Postgres database will always be available and writable.
 - Assumed that the PII data will always be properly masked and secured.
