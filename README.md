@@ -11,7 +11,7 @@ This project aims to develop a scalable and secure solution to read messages fro
 - **exe.py**: Used to install the dependencies and build docker containers for the application
 
 
-## Prerequisites, Setup and Installation:
+## Prerequisites, Setup and Execution:
 
 - Prerequisites on your computer:
   - python 3.9 or higher
@@ -46,40 +46,16 @@ psql -d postgres -U postgres -p 5432 -h localhost -W
 ```bash
 select * from user_logins;
 ```
-- You will see the data extracted from SQS queue and loaded into the database.
+- You will see the data extracted from SQS queue and loaded into the database. <br>
 
 
 ## How it Works:
 
-- The script.py script reads messages from the SQS queue using the boto3 library.<br>
-- Each message is parsed as JSON and the PII attributes `device_id and ip` are masked using the hashlib library.<br>
-- The masked data is then written to the PostgreSQL database using the psycopg2 library.<br>
-- The script continues to read messages from the queue until the queue is empty, at which point it sleeps for a short period before checking the queue again. <br>
+- The exe.py script installs the required dependencies. It also runs the .yml file that extracts the custom docker image and creates a container for them.
+- The main.py script reads the messages from SQS queue, masks the required attributes, and stores the masked data in a PostgreSQL database.
 
-
-## Configuration:
-
-- **sqs_queue_url**: The URL of the SQS queue to read from. <br>
-- **postgres_conn**: The connection details for the PostgreSQL database. <br>
-- **masked_fields**: A list of fields to mask in the PII data. <br>
-
-
-## Security:
-
-- The PII data is masked using a SHA-256 hash, making it irreversible and secure. <br>
-- The PostgreSQL database is used to store the masked data, ensuring data integrity and security.<br>
-
-
-## Scalability:
-
-- The application is designed to handle a growing dataset by using a message queueing system (SQS) and a scalable database (PostgreSQL).<br>
-- The application can be easily scaled horizontally by adding more instances of the application.<br>
-
-
-## Testing:
-
-- The application has been tested using a local SQS queue and PostgreSQL database.<br>
-- The testing process involved sending sample messages to the SQS queue and verifying that the data was correctly masked and stored in the PostgreSQL database.<br>
+## Summary
+To begin with, I was not able to execute the code because of a silly reason. Some of my ports were configured to other services/devices that I didn't know of. After intesive troubleshooting, I figured it it out. Finally I was able to run the code. 
 
 
 ## Contributing:
